@@ -1,0 +1,33 @@
+button, .button {
+    background-color: #CCCCCC;
+    border: 1px solid transparent;
+    color: #353535;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Segoe UI','Open Sans',Verdana,Arial,Helvetica,sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    height: 28px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    min-height: 26px;
+    min-width: 70px;
+    padding: 2px 5px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+.bg-color-blue {
+    background-color: #2D89EF !important;
+}
+.bg-color-orange {
+    background-color: #E3A21A !important;
+}
+
+.bg-color-gray {
+    background-color: #98A9B9 !important;
+}
+
+.button-text-gray{
+ color: #fff;
+}

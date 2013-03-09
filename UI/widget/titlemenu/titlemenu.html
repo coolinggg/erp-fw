@@ -1,0 +1,54 @@
+
+<link rel='stylesheet'  href='css/titlemenu.css' type='text/css' media='screen' />
+
+<script type="text/javascript"  src="../../libs/jquery-1.7.2.min.js"></script>
+<script type="text/javascript"  src="../../libs/underscore-min.js"></script>
+
+<script type="text/javascript"  src="titlemenu.js"></script>
+
+<style>
+body{
+	background-color:#F7F7F7;
+	height:100%;
+	font-family:宋体;
+	font-size:14px;
+	margin:0px;
+}
+ol, ul,li {
+	list-style: none outside none;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+a:link, a:visited {
+	color: #A5B0BC;
+	text-decoration: none;
+	
+}
+a:hover {
+	text-decoration: none;
+}
+
+</style>
+
+<script type="text/javascript">
+	$().ready(function() 
+	{  
+		$.ajaxSetup({
+            error:function(x,e){
+                alert(e);
+                return false;
+            }
+        });
+
+		$.getJSON("getjson.php", { "resultType": "json" }, function(data, textStatus)
+         {
+			$.fn.jTitleMenu({Data: data,
+                Icon: ['images/left_ico_money.png','images/left_ico_money.png','images/left_ico_money.png'],});
+	     });
+
+
+});
+
+
+</script>
