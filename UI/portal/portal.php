@@ -5,7 +5,15 @@ class portal extends controller{
 
 	public function get()
 	{
-		$this->display('demo.html');
+		if(isset($_REQUEST["index"]))
+		{
+			$this->display($_REQUEST["index"] . '.html');
+		}
+		else
+		{
+			$this->display('order' . '.html');
+		}
+		
 	}
 }
 ?>

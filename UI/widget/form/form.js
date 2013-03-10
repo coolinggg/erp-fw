@@ -14,12 +14,14 @@
     $.extend($.fn, {
 
         jForm: function(setting) {
-          var uiModelType = "uiDialogForm";
+          var uiModelType = "uiForm";
 
           var ps = $.extend({
             uiModelName  : "fff",
             uiModelData:{},
 
+            biModelData: {"ddd":"xxx","ddd2":"xxx" },
+            
             renderTo: $(document.body),
             onSuccess: function(data) { }
           }, setting);
@@ -27,8 +29,8 @@
           ps.uiModelData = $.extend({
             fields: [{"fieldname":"ddd","fieldtype":"text", "desc":"sss", "validstring":"至少1个字符"},
                      {"fieldname":"ddd2","fieldtype":"text", "desc":"sss", "validstring":"至少1个字符"}],
-            formattr: {"formname":"xxx","action":"xxx","submitButton":"subxxx" },
-            fieldsvalues: {"ddd":"xxx","ddd2":"xxx" }
+            formattr: {"formname":"xxx","action":"xxx","submitButton":"subxxx" }
+            
            }
             , ps.uiModelData);
 
@@ -37,6 +39,10 @@
           if(getUIModelUrl())
           {
               ps.uiModelData = getUIModel(getUIModelUrl(), uiModelType, ps.uiModelName);
+          }
+          if(getDataModelUrl())
+          {
+              ps.biModelData = getDataModel(getDataModelUrl(), uiModelType, ps.uiModelName);
           }
 
             var menuTemplate = [
@@ -50,7 +56,7 @@
                   '<td style="width:200px;"><div class="onCorrect" id="<%=fields[i].fieldname%>Tip" ><%=fields[i].validstring%></div></td>',
                 '</tr>',
                 '<%}%>',
-                '<tr><td></td><td align="right"><input id="<%=formattr.submitButton%>" type="submit" value="提交2" name="<%=formattr.submitButton%>"></td></tr>',
+                '<tr><td colspan="3" style="padding-left:30px;" align="right"><input style="width:80px;" id="<%=formattr.submitButton%>" type="submit" value="确定" name="<%=formattr.submitButton%>"></td></tr>',
             '</tbody>',
             
             '</table></form>'].join('');
@@ -80,10 +86,10 @@
         }); 
 
                 
-        $("#ddd").formValidator({onShow:"请输入至少1333个长度",
-                                  onFocus:"至少1333个长度",
-                                  onCorrect:"密码合法"
-                                  }).inputValidator({min:1,empty:{leftEmpty:false,rightEmpty:false,emptyError:"密码两边不能有空符号"},onError:"密码不能为空,请确认"});
+        $("#ddd").formValidator({onShow:"请输入至少10个长度",
+                                  onFocus:"至少10个长度",
+                                  onCorrect:"合法"
+                                  }).inputValidator({min:1,empty:{leftEmpty:false,rightEmpty:false,emptyError:"密码两边不能有空符号"},onError:"订单编号不能为空,请确认"});
    
       return;
     }

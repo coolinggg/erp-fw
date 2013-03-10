@@ -2,8 +2,8 @@
  
 defined('FRAME_SMARTY_DIR') || define('FRAME_SMARTY_DIR', ROOT_DIR.'AbstractServer'.DS.'libs'.DS.'Smarty'.DS);
 
-defined('UI_SERVER_DIR') || define('UI_SERVER_DIR', ROOT_DIR.'UIServer'.DS);
-defined('BUSINESS_SERVER_DIR') || define('BUSINESS_SERVER_DIR', ROOT_DIR.'BusinessServer'.DS);
+defined('UI_SERVER_DIR') || define('UI_SERVER_DIR', ROOT_DIR.'UI'.DS);
+defined('BUSINESS_SERVER_DIR') || define('BUSINESS_SERVER_DIR', ROOT_DIR.'BI'.DS);
 
 session_start();
 
@@ -43,7 +43,7 @@ class routing{
             $this->resource = $resourceURIPaths[count($resourceURIPaths) - 1];
             $this->objParams['resource'] = $this->resourcePath;
 
-           if (!in_array($this->resourceType, array('BusinessServer', 'UIServer'))) 
+           if (!in_array($this->resourceType, array('BI', 'UI'))) 
            {
               die("resourceType(".$this->resourceType.")非法");
            }
@@ -52,7 +52,7 @@ class routing{
          else
          {
             $this->resourcePath = 'portal';
-            $this->resourceType = 'UIClient';
+            $this->resourceType = 'UI';
             $this->resource = "portal";
          }
      }

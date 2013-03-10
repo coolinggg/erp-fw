@@ -25,6 +25,7 @@
 
          new Dialog('',
           {
+            title: ps.uiModelData.title,
             id:'dialog-'+ps.uiModelName,
             beforeShow:function(dialog)
             {

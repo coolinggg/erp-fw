@@ -50,7 +50,7 @@ final class View{
 				$smarty->compile_check	=	true;
 				$smarty->caching		=	0;
 				$smarty->compile_dir	=	ROOT_DIR.'cache';
-				$smarty->template_dir	=	ROOT_DIR. '/UIClient/tpl/';
+				$smarty->template_dir	=	ROOT_DIR. '/UI/tpl/';
 				$smarty->plugins_dir	=	array(FRAME_SMARTY_DIR.'plugins');
 				//var_dump($smarty);exit();
 				return $smarty;

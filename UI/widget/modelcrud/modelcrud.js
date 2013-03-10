@@ -17,7 +17,7 @@
 
                 renderTo: $(document.body)
             }, setting);
-            
+            ps.renderTo = (typeof ps.renderTo == 'string' ? $(ps.renderTo) : ps.renderTo);
             ps.uiModelData = $.extend({title: "物料管理"}, ps.uiModelData);
 
             if(getUIModelUrl())
@@ -29,23 +29,23 @@
             '<button id="additem" class="bg-color-gray button-text-gray">增    加</button>',
             '<button id="additem2" class="bg-color-gray button-text-gray">批量导出</button>',
             '<button id="additem3" class="bg-color-gray button-text-gray">过    滤</button>',
-            '<div id="<%=container%>" style="width:100%"></div>'].join('');
+            '<div id="<%=container%>" style="width:100%; border: solid 1px #DDDDDD;"></div>'].join('');
 
             var html = _.template(menuTemplate, {'container': ps.uiTableModelName + "-container"});
             ps.renderTo.html(html);
 
      
-            $.fn.jTable({uiModelName: "dialog-ddd",renderTo: "#" + ps.uiTableModelName + "-container"});
+            $.fn.jTable({uiModelName: ps.uiTableModelName,renderTo: "#" + ps.uiTableModelName + "-container"});
           
 
             var creatCrudDialog = function()
             {
-              $.fn.jDialogForm({uiModelName: "dialog-ddd",uiSubModelName: "form-ddd",
+              $.fn.jDialogForm({uiModelName: ps.uiDialogFormModelName,uiSubModelName: ps.uiFormModelName,
                 onSuccess: function(data) {alert("=====");}});
             }
             var creatSelectDialog = function()
             {
-              $.fn.jDialogTable({uiModelName: "dialog-ddd",uiSubModelName: "form-ddd",
+              $.fn.jDialogTable({uiModelName: ps.uiDialogFormModelName,uiSubModelName: ps.uiFormModelName,
                 onSuccess: function(data) {alert("=====");}});
             }
 

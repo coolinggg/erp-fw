@@ -1,5 +1,5 @@
 <?php
-require "global_cfg.php";
+require "erp-fw-cfg.php";
 require "AbstractServer/routing.php";
 
 //var_dump($_REQUEST);;

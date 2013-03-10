@@ -5,7 +5,7 @@
 	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BACKGROUND: #F5F4EA;  PADDING-BOTTOM: 0px; PADDING-TOP: 0px;  border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px
 }
 .dialog .bar {
-	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; MIN-HEIGHT: 15px; BACKGROUND: #C55433; PADDING-BOTTOM: 6px; CURSOR: move; COLOR: #fff; PADDING-TOP: 6px
+	PADDING-RIGHT: 6px; PADDING-LEFT: 6px; MIN-HEIGHT: 15px; BACKGROUND: #0093D5; PADDING-BOTTOM: 6px; CURSOR: move; COLOR: #fff; PADDING-TOP: 6px
 }
 .dialog .bar .title {
 	FLOAT: left; MARGIN-RIGHT: 10px

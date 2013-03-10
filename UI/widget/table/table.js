@@ -22,11 +22,12 @@
             if(getUIModelUrl())
             {
                 ps.uiModelData = getUIModel(getUIModelUrl(), uiModelType, ps.uiModelName);
+                
             }
                         
             if(getDataModelUrl())
             {
-              ps.biModelData = getDataModel(getDataModelUrl(), ps.uiDataModelName);
+              ps.biModelData = getDataModel(getDataModelUrl(), uiModelType, ps.uiModelName);
             }
 
             var menuTemplate = [
@@ -47,7 +48,7 @@
                   '<%} else {%> ',
                   '<td class="right"><%=datas[i][j]%></td>',
               '<%} }}%> </tr>',
-            '</tbody><tfoot></tfoot></table>'].join('');
+            '</tbody></table>'].join('');
 
     	  var html = _.template(menuTemplate, { 'datas': ps.biModelData,  'columns':ps.uiModelData.columns});
 		      ps.renderTo.html(html);
